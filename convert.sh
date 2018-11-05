@@ -7,12 +7,10 @@ RSZ="-resize %25"
 DEL="-delay 1"
 set -x
 
-#str=00000050
-#convert ${str}.jpg -fill '#f9ec50' -draw 'rectangle 1620,950 1820,1050'  000000${str}.png
-#convert ${str}.png $RSZ ${str}_.png
 str=""
 for i in `seq 50 92`
 do
+   #apply a patch (draw rectangle) to erase '[adult swim]' writing.
    convert 000000${i}.jpg -fill '#f9ec50' -draw 'rectangle 1620,950 1820,1050'  000000${i}.png
    convert 000000${i}.png $RSZ  000000${i}_.png
   if [[ -n "$str" ]]
@@ -24,5 +22,7 @@ do
   
   #echo $str
 done
+
+#make actual gif
 convert -loop 0 $DEL $str test.gif
 
