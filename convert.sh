@@ -1,6 +1,6 @@
 #download
 youtube-dl -k https://www.youtube.com/watch?v=0oBx7Jg4m-o
-mplayer -vo jpg "This is Fine-0oBx7Jg4m-o.f137.mp4"
+mplayer -vo jpeg 'This is Fine-0oBx7Jg4m-o.f137.mp4'
 
 
 RSZ="-resize %25"
